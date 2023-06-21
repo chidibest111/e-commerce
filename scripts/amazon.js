@@ -1,4 +1,6 @@
-const products = [{
+
+//Creating my html product generation code below which is commented.
+/* const products = [{
     image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
     name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
     rating:{
@@ -10,14 +12,24 @@ const products = [{
         rating:{
             stars:127,
             count:127},
-            priceCents:20095,
+            priceCents:2095,
         }, {
             image:'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
             name:'Adults Plain Cotton T-Shirt - 2 Pack',
             rating:{
                 stars:4.6,
                 count:56,},
-                priceCents:799,}];
+                priceCents:799,},
+                {
+                    image: 'images/products/black-2-slot-toaster.jpg',
+                    name: '2 Slot Toaster - Black',
+                    rating: {
+                        stars: 5,
+                        count:2197,
+                    },
+                    priceCents: 1899
+
+            }];*/
             let productsHTML = '';
             products.forEach((product) =>{
                 productsHTML +=`
@@ -33,14 +45,14 @@ const products = [{
       
                 <div class="product-rating-container">
                   <img class="product-rating-stars"
-                    src="images/ratings/rating-${product.rating.stars}.png">
+                    src="images/ratings/rating-45.png">
                   <div class="product-rating-count link-primary">
-                    ${product.rating.count * 10}
+                    ${product.rating.count}
                   </div>
                 </div>
       
                 <div class="product-price">
-                 $${(product.priceCents).toFixed(2)}
+                 $${(product.priceCents / 100).toFixed(2)}
                 </div>
       
                 <div class="product-quantity-container">
@@ -73,4 +85,4 @@ const products = [{
                     console.log(productsHTML);
             });
 
-            document.querySelector('.js-products-grid').innerHTML = productsHTML;
+            document.querySelector('.js-product-grid').innerHTML = productsHTML;
